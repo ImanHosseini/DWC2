@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignInCntrl">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#28b5c9" height="208.0" layoutY="199.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="648.0" />
+            <ImageView fitHeight="175.0" fitWidth="600.0" layoutX="351.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@devb.jpg" />
+               </image>
+            </ImageView>
+        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="199.0" stroke="BLACK" strokeType="INSIDE" width="648.0" />
+            <TextField fx:id="UserName" layoutX="285.0" layoutY="230.0" />
+            <TextField fx:id="Pass" layoutX="285.0" layoutY="265.0" />
+            <Label layoutX="198.0" layoutY="232.0" text="UserName">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="267.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="LogInButton" layoutX="236.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleLogInButtonAction" text="Log In" />
+            <Button fx:id="SignUpButton" layoutX="360.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleSignUpButtonAction" text="Sign Up" />
+            <ImageView fitHeight="192.0" fitWidth="218.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@devzz.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="156.0" fitWidth="200.0" layoutX="217.0" layoutY="35.0">
+               <image>
+                  <Image url="@../../DWC1.0/src/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="192.0" fitWidth="218.0" layoutX="429.0" layoutY="4.0" pickOnBounds="true">
+               <image>
+                  <Image url="@devzzf.jpg" />
+               </image>
+            </ImageView>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HubCntrl">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="890.0" prefWidth="1039.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="890.0" stroke="BLACK" strokeType="INSIDE" width="972.0" />
+            <Canvas fx:id="mapview" blendMode="SRC_ATOP" height="641.0" layoutX="294.0" layoutY="26.0" width="641.0" />
+            <Button fx:id="left_button" layoutX="472.0" layoutY="674.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleleft_buttonAction" prefHeight="32.0" prefWidth="54.0" text="&lt;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="right_button" layoutX="689.0" layoutY="674.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleright_buttonAction" prefHeight="32.0" prefWidth="54.0" text="&gt;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="up_button" layoutX="541.0" layoutY="674.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleup_buttonAction" prefHeight="32.0" prefWidth="54.0" text="Up">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="down_button" layoutX="605.0" layoutY="674.0" minWidth="30.0" mnemonicParsing="false" onAction="#handledown_buttonAction" prefHeight="32.0" prefWidth="63.0" text="Down">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="711.0" fitWidth="254.0" layoutX="7.0" opacity="0.89" pickOnBounds="true">
+               <image>
+                  <Image url="@column.jpg" />
+               </image>
+            </ImageView>
+            <TabPane layoutX="14.0" layoutY="229.0" prefHeight="426.0" prefWidth="247.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="MsgTab" text="Messages">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="414.0" prefWidth="246.0">
+                           <children>
+                              <ChoiceBox fx:id="MsgList" layoutX="11.0" layoutY="52.0" prefHeight="25.0" prefWidth="224.0" />
+                              <Label layoutX="11.0" layoutY="28.0" text="Messages:" />
+                              <TextArea fx:id="MsgFromText" editable="false" layoutX="14.0" layoutY="84.0" prefHeight="95.0" prefWidth="218.0" wrapText="true" />
+                              <ChoiceBox fx:id="msgTo" layoutX="14.0" layoutY="223.0" prefHeight="25.0" prefWidth="224.0" />
+                              <TextArea fx:id="msgToSend" layoutX="14.0" layoutY="257.0" prefHeight="108.0" prefWidth="224.0" wrapText="true" />
+                              <Label layoutX="14.0" layoutY="199.0" text="Send Message:" />
+                              <Button fx:id="sendmsg_button" layoutX="102.0" layoutY="371.0" mnemonicParsing="false" onAction="#sendMsg" text="Send" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="BattleTab" text="BattleReports">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="BattleList" layoutX="24.0" layoutY="14.0" prefHeight="312.0" prefWidth="201.0" />
+                              <Button fx:id="showBRep" layoutX="98.0" layoutY="345.0" mnemonicParsing="false" text="Show" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="TroopsTab" text="Troops">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="TroopsTable" layoutX="24.0" layoutY="14.0" prefHeight="367.0" prefWidth="247.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="TroopsTableType" prefWidth="75.0" text="Type" />
+                                  <TableColumn fx:id="TroopsTablePos" text="Pos" />
+                                    <TableColumn fx:id="TroopsTableStat" prefWidth="75.0" text="Status" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="MoveTroopButton" layoutX="98.0" layoutY="371.0" mnemonicParsing="false" onAction="#MoveTroop" text="Move" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <ImageView fitHeight="95.0" fitWidth="125.0" layoutX="73.0" layoutY="26.0">
+               <image>
+                  <Image url="@../../DWC1.0/src/logo.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="-3.0" layoutY="711.0" prefHeight="176.0" prefWidth="972.0">
+               <children>
+                  <ImageView fitHeight="182.0" fitWidth="973.0" layoutX="1.0" opacity="0.94" pickOnBounds="true">
+                     <image>
+                        <Image url="@barra.jpg" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+                  <ChoiceBox fx:id="troop_selection" layoutX="89.0" layoutY="79.0" prefWidth="150.0" />
+                  <Button fx:id="recruit_button" layoutX="253.0" layoutY="79.0" mnemonicParsing="false" onAction="#recruitTroop" text="Recruit Troop" />
+               </children>
+            </AnchorPane>
+            <Label fx:id="PlayerName" layoutX="22.0" layoutY="150.0" text="Taghi">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="177.0" text="Credit:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="PlayerCredit" layoutX="82.0" layoutY="177.0" text="200">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="logout_button" layoutX="106.0" layoutY="674.0" mnemonicParsing="false" onAction="#handlelogout_buttonAction" text="Log Out" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
